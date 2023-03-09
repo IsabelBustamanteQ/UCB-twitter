@@ -1,7 +1,10 @@
+
+
 class Anuncio{
     constructor(titulo, detalle){
-        this.titulo=titulo;
-        this.detalle=detalle;
+
+            this.titulo=titulo;
+            this.detalle=detalle;
     }
     GetTitulo(){
         return this.titulo;

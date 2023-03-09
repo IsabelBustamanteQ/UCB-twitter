@@ -1,3 +1,4 @@
+
 class ListaNotas{
     constructor(){
         this.lista=[];
