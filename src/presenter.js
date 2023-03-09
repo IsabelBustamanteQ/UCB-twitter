@@ -1,15 +1,17 @@
-import sumar from "./sumador";
+import Anuncio from "./Anuncio.js";
+import ListaAnuncios from "./ListaAnuncios.js";
 
-const first = document.querySelector("#primer-numero");
-const second = document.querySelector("#segundo-numero");
-const form = document.querySelector("#sumar-form");
-const div = document.querySelector("#resultado-div");
+const formularioAnuncio = document.querySelector("#formularioAnuncio");
+const tituloAnuncio = document.querySelector("#tituloAnuncio");
+const detalleAnuncio = document.querySelector("#detalleAnuncio");
+const listaNotasHTML = document.querySelector("#listaAnunciosHTML");
 
-form.addEventListener("submit", (event) => {
+let listaAnunciosNueva = new ListaAnuncios();
+
+formularioAnuncio.addEventListener("submit", (event) => {
   event.preventDefault();
-
-  const firstNumber = Number.parseInt(first.value);
-  const secondNumber = Number.parseInt(second.value);
-
-  div.innerHTML = "<p>" + sumar(firstNumber, secondNumber) + "</p>";
+  let AnuncioNuevo = new Anuncio(tituloAnuncio.value, detalleAnuncio.value);
+  listaAnunciosNueva.AgregarAnuncio(AnuncioNuevo);
+  listaAnunciosHTML.innerHTML = "";
+  listaAnunciosNueva.MostrarLista();
 });
